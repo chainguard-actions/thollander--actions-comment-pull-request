@@ -8,7 +8,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 | Version | Tag | Upstream commit |
 |---------|-----|-----------------|
-| v3.0.1 | [`v3.0.1`](https://github.com/chainguard-actions/thollander-actions-comment-pull-request/tree/v3.0.1) | — |
+| v3.0.1 | [`v3.0.1`](https://github.com/chainguard-actions/thollander-actions-comment-pull-request/tree/v3.0.1) | [`24bffb9`](https://github.com/thollander/actions-comment-pull-request/commit/24bffb9b452ba05a4f3f77933840a6a841d1b32b) |
 
 ## Privacy
 
