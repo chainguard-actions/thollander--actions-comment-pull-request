@@ -1,0 +1,38 @@
+---
+on: [push, pull_request]
+
+permissions: {}
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3
+      
+      - name: Setup Node
+        uses: actions/setup-node@3235b876344d2a9aa001b8d1453c930bba69e610 # v3
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Lint
+        run: npm run lint
+      
+      - name: Setup Git
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        uses: fregante/setup-git-user@2e28d51939d2a84005a917d2f844090637f435f8 # v1
+      
+      - name: Commit/push if there is a diff
+        if: github.event_name == 'push' && github.ref_name == 'main'
+        run: |
+          if ! git diff --exit-code; then
+            git add .
+            git commit -m "chore: compile and lint $GITHUB_SHA [ci skip]"
+            git push origin main
+          fi

@@ -1,0 +1,13 @@
+{
+  "status": "self_contained",
+  "entries": [
+    {
+      "path": "lib/index.js",
+      "status": "self_contained"
+    },
+    {
+      "path": "lib/cleanup/index.js",
+      "status": "self_contained"
+    }
+  ]
+}
