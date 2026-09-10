@@ -25,7 +25,6 @@ inputs:
     description: 'Whether a comment should be created even if comment-tag is not found.'
     default: 'true'
 runs:
-  pre: chainguard-phonehome.js
   using: 'node20'
   main: 'lib/index.js'
   post: 'lib/cleanup/index.js'
